@@ -1,5 +1,16 @@
 ## 0.4.1
 
+### Changed
+
+* `LinagoraSidebarSectionHeaderAction` keeps the Figma XSmall glyph at `size`
+  (16.67) and defaults the interactive hit target to
+  `LinagoraSidebarControl.tapTarget` (24), with a local transparent `Material`
+  and circular `InkResponse`. Pass `targetSize` (for example `size` or 40) to
+  override. `LinagoraSidebarSectionHeader` absorbs the default overhang so the
+  visual gap between action glyphs stays `actionSpacing` (8). Use
+  `LinagoraSidebarSectionHeaderAction.gapBetween` when laying out custom
+  targets.
+
 ### Fixed
 
 * `ReactionsDialogWidget` no longer throws "RenderFlex children have non-zero

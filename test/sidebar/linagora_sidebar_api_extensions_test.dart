@@ -150,8 +150,15 @@ Future<void> _headerSlots(WidgetTester tester) async {
     matching: find.byType(InkResponse),
   );
   expect(actionFinder, findsOneWidget);
-  expect(tester.getSize(actionFinder).width, closeTo(16.67, 0.01));
-  expect(tester.getSize(actionFinder).height, closeTo(16.67, 0.01));
+  // Interactive actions use the padded sidebar control target by default.
+  expect(
+    tester.getSize(actionFinder).width,
+    closeTo(LinagoraSidebarSectionHeaderAction.defaultTargetSize, 0.01),
+  );
+  expect(
+    tester.getSize(actionFinder).height,
+    closeTo(LinagoraSidebarSectionHeaderAction.defaultTargetSize, 0.01),
+  );
 
   await tester.tap(find.byKey(svgKey));
 
